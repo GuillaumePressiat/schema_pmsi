@@ -1,19 +1,11 @@
 --
 -- Create Schema Script 
---   Database Version   : 11.2.0.2.0 
---   TOAD Version       : 9.6.0.27 
---   DB Connect String  : vs-oracle-cid:1521/CIDD2 
---   Schema             : PMSI 
---   Script Created by  : SYSTEM 
---   Script Created at  : 13/01/2021 21:48:20 
---   Physical Location  :  
---   Notes              :  
 --
 
 -- Object Counts: 
---   Indexes: 51        Columns: 58         
---   Tables: 40         Columns: 753        
---   Views: 37          
+--   Indexes: 41        Columns: 47         
+--   Tables: 52         Columns: 961        
+--   Views: 61          
 
 
 CREATE TABLE MCO_RSA_ACTES
@@ -710,6 +702,203 @@ NOPARALLEL
 MONITORING;
 
 
+CREATE TABLE REF_CCAM_Y_COMPLETE
+(
+  CODE  VARCHAR2(7 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHA_ACTES
+(
+  NOSEQSEJ     VARCHAR2(255 BYTE),
+  NOSEQRHS     VARCHAR2(255 BYTE),
+  CODE         VARCHAR2(255 BYTE),
+  CSARR        VARCHAR2(255 BYTE),
+  CDARR        VARCHAR2(255 BYTE),
+  CDAPP        VARCHAR2(255 BYTE),
+  CDMOD        VARCHAR2(255 BYTE),
+  CDPAT1       VARCHAR2(255 BYTE),
+  CDPAT2       VARCHAR2(255 BYTE),
+  CDINTER      VARCHAR2(255 BYTE),
+  NBPATIND     VARCHAR2(255 BYTE),
+  NBEXEC       BINARY_DOUBLE,
+  INDVAL       VARCHAR2(255 BYTE),
+  DELAI        BINARY_DOUBLE,
+  CDCCAM       VARCHAR2(255 BYTE),
+  PHASE        VARCHAR2(255 BYTE),
+  ACT          VARCHAR2(255 BYTE),
+  EXTDOC       VARCHAR2(255 BYTE),
+  ANSOR        VARCHAR2(255 BYTE),
+  NAS          VARCHAR2(255 BYTE),
+  NOSEMAINE    VARCHAR2(255 BYTE),
+  ANSMOISRHS   VARCHAR2(255 BYTE),
+  NBPATREEL    BINARY_DOUBLE,
+  NBINT        VARCHAR2(255 BYTE),
+  EXTDOCCSARR  VARCHAR2(255 BYTE),
+  DESCRI       VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHA_DIAGS
+(
+  NOSEQSEJ    VARCHAR2(255 BYTE),
+  NOSEQRHS    VARCHAR2(255 BYTE),
+  POSITION    BINARY_DOUBLE,
+  DIAG        VARCHAR2(255 BYTE),
+  ANSOR       VARCHAR2(255 BYTE),
+  NAS         VARCHAR2(255 BYTE),
+  NOSEMAINE   VARCHAR2(255 BYTE),
+  ANSMOISRHS  VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHS_ACTES
+(
+  NAS          VARCHAR2(255 BYTE),
+  NOSEJ        VARCHAR2(255 BYTE),
+  NOSEM        VARCHAR2(255 BYTE),
+  CODE         VARCHAR2(255 BYTE),
+  CSARR        VARCHAR2(255 BYTE),
+  CDARR        VARCHAR2(255 BYTE),
+  CDAPP        VARCHAR2(255 BYTE),
+  CDMOD        VARCHAR2(255 BYTE),
+  CDPAT1       VARCHAR2(255 BYTE),
+  CDPAT2       VARCHAR2(255 BYTE),
+  CDINTER      VARCHAR2(255 BYTE),
+  NBEXEC       INTEGER,
+  DATE_ACTE    VARCHAR2(255 BYTE),
+  CDCCAM       VARCHAR2(255 BYTE),
+  PHASE        VARCHAR2(255 BYTE),
+  ACT          VARCHAR2(255 BYTE),
+  EXTDOC       VARCHAR2(255 BYTE),
+  ANSOR        VARCHAR2(255 BYTE),
+  ANSMOISRHS   VARCHAR2(255 BYTE),
+  NBPATREEL    VARCHAR2(255 BYTE),
+  NBINT        VARCHAR2(255 BYTE),
+  EXTDOCCSARR  VARCHAR2(255 BYTE),
+  DESCRI       VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHS_DA
+(
+  NAS         VARCHAR2(255 BYTE),
+  NOSEJ       VARCHAR2(255 BYTE),
+  NOSEM       VARCHAR2(255 BYTE),
+  DA          VARCHAR2(255 BYTE),
+  ANSOR       VARCHAR2(255 BYTE),
+  ANSMOISRHS  VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHS_RHS
+(
+  VCLASS        VARCHAR2(255 BYTE),
+  CM            VARCHAR2(255 BYTE),
+  CODE          VARCHAR2(255 BYTE),
+  SUBDIVISION   VARCHAR2(255 BYTE),
+  SEV           VARCHAR2(255 BYTE),
+  CDRTR         VARCHAR2(255 BYTE),
+  NOVRHS        VARCHAR2(255 BYTE),
+  NOFINESS      VARCHAR2(255 BYTE),
+  NOFRHS        VARCHAR2(255 BYTE),
+  NOSEJ         VARCHAR2(255 BYTE),
+  NAS           VARCHAR2(255 BYTE),
+  DTENT         VARCHAR2(255 BYTE),
+  DTSORT        VARCHAR2(255 BYTE),
+  DTNAIS        VARCHAR2(255 BYTE),
+  SEXE          VARCHAR2(255 BYTE),
+  CDRESI        VARCHAR2(255 BYTE),
+  TYPEHOSP      VARCHAR2(255 BYTE),
+  D8EEUE        VARCHAR2(255 BYTE),
+  ECHPMSI       VARCHAR2(255 BYTE),
+  PROV          VARCHAR2(255 BYTE),
+  D8SOUE        VARCHAR2(255 BYTE),
+  SCHPMSI       VARCHAR2(255 BYTE),
+  DEST          VARCHAR2(255 BYTE),
+  NOSEM         VARCHAR2(255 BYTE),
+  JOURNEES_HWE  VARCHAR2(255 BYTE),
+  JOURNEES_WE   VARCHAR2(255 BYTE),
+  NOUM          VARCHAR2(255 BYTE),
+  TYPAUT        VARCHAR2(255 BYTE),
+  DTCHIR        VARCHAR2(255 BYTE),
+  FPPC          VARCHAR2(255 BYTE),
+  MMP           VARCHAR2(255 BYTE),
+  AE            VARCHAR2(255 BYTE),
+  HABILLAGE     VARCHAR2(255 BYTE),
+  DEPLACEMENT   VARCHAR2(255 BYTE),
+  ALIMENTATION  VARCHAR2(255 BYTE),
+  CONTINENCE    VARCHAR2(255 BYTE),
+  COMPORTEMENT  VARCHAR2(255 BYTE),
+  RELATION      VARCHAR2(255 BYTE),
+  NBDA          INTEGER,
+  NBCSARR       INTEGER,
+  NBCCAM        INTEGER,
+  ANSOR         VARCHAR2(255 BYTE),
+  ANSMOISRHS    VARCHAR2(255 BYTE),
+  NBJPRES       INTEGER,
+  INDERR        VARCHAR2(255 BYTE),
+  POURSUITE     VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE REF_GHS_MONORUM_UHCD
+(
+  GHS      VARCHAR2(255 BYTE),
+  GHM      VARCHAR2(255 BYTE),
+  LIBELLE  VARCHAR2(255 BYTE),
+  ANSEQTA  VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE DOC_EPMSI_THESAURUS_TABLEAUX
+(
+  NOM_TABLEAU      VARCHAR2(30 BYTE),
+  VIEW_NAME        VARCHAR2(46 BYTE),
+  LIBELLE_TABLEAU  VARCHAR2(1000 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
 CREATE TABLE TEMP_INTERVS
 (
   I_ADMISSION_NR  VARCHAR2(255 BYTE)
@@ -909,53 +1098,6 @@ CREATE TABLE OVA_GHMINFO
   PCTCMA4    BINARY_DOUBLE,
   PCTAUTRES  BINARY_DOUBLE,
   ANNEE      VARCHAR2(255 BYTE)
-)
-LOGGING 
-NOCOMPRESS 
-NOCACHE
-NOPARALLEL
-MONITORING;
-
-
-CREATE TABLE MCO_CORA_IPP
-(
-  NORSS              VARCHAR2(255 BYTE),
-  ANSOR              VARCHAR2(4 BYTE),
-  ID_SEJOUR          NUMBER(8),
-  ID_PATIENT         NUMBER(8),
-  DATE_DEBUT         DATE,
-  DATE_FIN           DATE,
-  IPP_PATIENT        VARCHAR2(20 BYTE),
-  NOM_USUEL_PATIENT  VARCHAR2(50 BYTE),
-  PRENOM_PATIENT     VARCHAR2(50 BYTE),
-  DATE_NAIS          DATE,
-  DATE_DECES         DATE
-)
-LOGGING 
-NOCOMPRESS 
-NOCACHE
-NOPARALLEL
-MONITORING;
-
-
-CREATE TABLE MCO_CORA_UF_PMSI
-(
-  NORSS              VARCHAR2(255 BYTE),
-  ANSOR              VARCHAR2(4 BYTE),
-  ID_RSS             NUMBER(8),
-  NORUM              VARCHAR2(42 BYTE),
-  DUREE_RUM          NUMBER(5),
-  DATE_DEBUT_RUM     DATE,
-  DATE_FIN_RUM       DATE,
-  ID_RUM             NUMBER(10),
-  CHRONO             NUMBER(3),
-  ID_MVT             NUMBER(8),
-  UF_PMSI            VARCHAR2(10 BYTE),
-  ID_UM_HEBERG       NUMBER(5),
-  ID_UNITE_HEBERG    NUMBER(5),
-  ID_UM_RESP_MED     NUMBER(5),
-  ID_UNITE_RESP_MED  NUMBER(5),
-  CDURM              VARCHAR2(10 BYTE)
 )
 LOGGING 
 NOCOMPRESS 
@@ -1169,16 +1311,182 @@ NOPARALLEL
 MONITORING;
 
 
-CREATE INDEX IDX__MCO_BR_UMAS_IUF ON MCO_BR_UMAS
-(IUF)
-LOGGING
-NOPARALLEL;
+CREATE TABLE MCO_CORA_IPP
+(
+  NORSS              VARCHAR2(255 BYTE),
+  ANSOR              VARCHAR2(4 BYTE),
+  ID_SEJOUR          NUMBER(8),
+  ID_PATIENT         NUMBER(8),
+  DATE_DEBUT         VARCHAR2(10 BYTE),
+  DATE_FIN           VARCHAR2(10 BYTE),
+  IPP_PATIENT        VARCHAR2(20 BYTE),
+  NOM_USUEL_PATIENT  VARCHAR2(50 BYTE),
+  PRENOM_PATIENT     VARCHAR2(50 BYTE),
+  DATE_NAIS          VARCHAR2(10 BYTE),
+  DATE_DECES         VARCHAR2(10 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
 
 
-CREATE INDEX IDX__MCO_BR_UMAS_IUM ON MCO_BR_UMAS
-(IUM)
-LOGGING
-NOPARALLEL;
+CREATE TABLE MCO_CORA_UF_PMSI
+(
+  NORSS              VARCHAR2(255 BYTE),
+  ANSOR              VARCHAR2(4 BYTE),
+  ID_RSS             NUMBER(8),
+  NORUM              VARCHAR2(42 BYTE),
+  DUREE_RUM          NUMBER(5),
+  DATE_DEBUT_RUM     VARCHAR2(10 BYTE),
+  DATE_FIN_RUM       VARCHAR2(10 BYTE),
+  DUREE_MVT          NUMBER(5),
+  DATE_DEBUT_MVT     VARCHAR2(10 BYTE),
+  DATE_FIN_MVT       VARCHAR2(10 BYTE),
+  ID_RUM             NUMBER(10),
+  CHRONO             NUMBER(3),
+  ID_MVT             NUMBER(8),
+  UF_PMSI            VARCHAR2(10 BYTE),
+  ID_UM_HEBERG       NUMBER(5),
+  ID_UNITE_HEBERG    NUMBER(5),
+  ID_UM_RESP_MED     NUMBER(5),
+  ID_UNITE_RESP_MED  NUMBER(5),
+  CDURM              VARCHAR2(10 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE SSR_RHA_RHA
+(
+  NOFINESS       VARCHAR2(255 BYTE),
+  NOVERRHA       VARCHAR2(255 BYTE),
+  NOVERGENRHA    VARCHAR2(255 BYTE),
+  RHSVCLASS      VARCHAR2(255 BYTE),
+  RHSCMC         VARCHAR2(255 BYTE),
+  RHSCODE        VARCHAR2(255 BYTE),
+  RHSCDR         VARCHAR2(255 BYTE),
+  RHAVCLASS      VARCHAR2(255 BYTE),
+  RHACMC         VARCHAR2(255 BYTE),
+  RHACODE        VARCHAR2(255 BYTE),
+  RHACDR         VARCHAR2(255 BYTE),
+  NBTOTIVA       INTEGER,
+  ZONRES         VARCHAR2(255 BYTE),
+  NOSEQSEJ       VARCHAR2(255 BYTE),
+  NOSEQRHS       VARCHAR2(255 BYTE),
+  AGEAN          INTEGER,
+  SEXE           VARCHAR2(255 BYTE),
+  CDGEO          VARCHAR2(255 BYTE),
+  ANTRHSSEJ      VARCHAR2(255 BYTE),
+  MOISANSORTIE   VARCHAR2(255 BYTE),
+  TYPEHOSPI      VARCHAR2(255 BYTE),
+  TYPAUT         VARCHAR2(255 BYTE),
+  ECHPMSI        VARCHAR2(255 BYTE),
+  PROV           VARCHAR2(255 BYTE),
+  SCHPMSI        VARCHAR2(255 BYTE),
+  DEST           VARCHAR2(255 BYTE),
+  SEM_DEB_SEJ    VARCHAR2(255 BYTE),
+  SEM_FIN_SEJ    VARCHAR2(255 BYTE),
+  ANTRHSUM       VARCHAR2(255 BYTE),
+  MOISANSRHS     VARCHAR2(255 BYTE),
+  JOURNEES_HWE   VARCHAR2(255 BYTE),
+  JOURNEES_WE    VARCHAR2(255 BYTE),
+  ANCINTERVCHIR  VARCHAR2(255 BYTE),
+  FPPC           VARCHAR2(255 BYTE),
+  MMP            VARCHAR2(255 BYTE),
+  AE             VARCHAR2(255 BYTE),
+  HABILLAGE      VARCHAR2(255 BYTE),
+  DEPLACEMENT    VARCHAR2(255 BYTE),
+  ALIMENTATION   VARCHAR2(255 BYTE),
+  CONTINENCE     VARCHAR2(255 BYTE),
+  COMPORTEMENT   VARCHAR2(255 BYTE),
+  RELATION       VARCHAR2(255 BYTE),
+  NBDA           INTEGER,
+  NBCDARR        INTEGER,
+  NBCCAM         INTEGER,
+  ANSOR          VARCHAR2(255 BYTE),
+  NAS            VARCHAR2(255 BYTE),
+  NOSEMAINE      VARCHAR2(255 BYTE),
+  ANSMOISRHS     VARCHAR2(255 BYTE),
+  NBJPRES        INTEGER,
+  RHSCM          VARCHAR2(255 BYTE),
+  RHSSUBD        VARCHAR2(255 BYTE),
+  RHSSEV         VARCHAR2(255 BYTE),
+  RHSINDERR      VARCHAR2(255 BYTE),
+  RHACM          VARCHAR2(255 BYTE),
+  RHASUBD        VARCHAR2(255 BYTE),
+  RHASEV         VARCHAR2(255 BYTE),
+  RHAINDERR      VARCHAR2(255 BYTE),
+  NOFINESSGEO    VARCHAR2(255 BYTE),
+  NBCSARR        INTEGER,
+  FILLER1        VARCHAR2(255 BYTE),
+  TYPGENAUTRHA   VARCHAR2(255 BYTE),
+  POURSUITE      VARCHAR2(255 BYTE),
+  GMT            VARCHAR2(255 BYTE),
+  BBASSE         VARCHAR2(255 BYTE),
+  NBJSUPBBASSE   INTEGER,
+  NBJZHAUTE      INTEGER,
+  LISP           VARCHAR2(255 BYTE),
+  RR             VARCHAR2(255 BYTE),
+  TYPEUMSPE      VARCHAR2(255 BYTE),
+  AGEJR          INTEGER,
+  CDPOSTAL       VARCHAR2(255 BYTE),
+  NUMSEQUM       VARCHAR2(255 BYTE),
+  NUMSEMAINE     VARCHAR2(255 BYTE),
+  ANNEESEMAINE   VARCHAR2(255 BYTE)
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE MCO_RSA_DATES
+(
+  ANSOR           VARCHAR2(4 BYTE),
+  NORSS           VARCHAR2(10 BYTE),
+  DTENT           VARCHAR2(10 BYTE),
+  DTSORT          VARCHAR2(10 BYTE),
+  DATE_DEBUT_RSS  DATE,
+  DATE_FIN_RSS    DATE
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE MCO_RUM_DATES
+(
+  ANSOR           VARCHAR2(4 BYTE),
+  NORUM           VARCHAR2(20 BYTE),
+  D8EEUE          VARCHAR2(10 BYTE),
+  D8SOUE          VARCHAR2(10 BYTE),
+  DATE_DEBUT_RUM  DATE,
+  DATE_FIN_RUM    DATE
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
+
+
+CREATE TABLE TEST_DATES
+(
+  A  DATE
+)
+LOGGING 
+NOCOMPRESS 
+NOCACHE
+NOPARALLEL
+MONITORING;
 
 
 CREATE INDEX IDX__MCO_RSA_DIAGS__NAS ON MCO_RSA_DIAGS
@@ -1201,12 +1509,6 @@ NOPARALLEL;
 
 CREATE INDEX IDX__MCO_RSA_ACTES__NORSSSQRUM ON MCO_RSA_ACTES
 (NORSS, NSEQRUM)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_UF_PMSI_NORSSRUM ON MCO_CORA_UF_PMSI
-(NORSS, NORUM)
 LOGGING
 NOPARALLEL;
 
@@ -1241,24 +1543,6 @@ LOGGING
 NOPARALLEL;
 
 
-CREATE INDEX IDX__MCO_CORA_IPP_IPP_PATIENT ON MCO_CORA_IPP
-(IPP_PATIENT)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_IPP_NORSS ON MCO_CORA_IPP
-(NORSS)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_IPP_ANSOR ON MCO_CORA_IPP
-(ANSOR)
-LOGGING
-NOPARALLEL;
-
-
 CREATE INDEX IDX__MCO_RSA_ANO__DTSORT ON MCO_RSA_ANO
 (DTSORT)
 LOGGING
@@ -1267,24 +1551,6 @@ NOPARALLEL;
 
 CREATE INDEX IDX__MCO_RSA_ANO__ANSOR ON MCO_RSA_ANO
 (ANSOR)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_UF_PMSI_UF_PMSI ON MCO_CORA_UF_PMSI
-(UF_PMSI)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_UF_PMSI_NORUM ON MCO_CORA_UF_PMSI
-(NORUM)
-LOGGING
-NOPARALLEL;
-
-
-CREATE INDEX IDX__MCO_CORA_UF_PMSI_CDURM ON MCO_CORA_UF_PMSI
-(CDURM)
 LOGGING
 NOPARALLEL;
 
@@ -1397,12 +1663,6 @@ LOGGING
 NOPARALLEL;
 
 
-CREATE INDEX IDX__MCO_CORA_UF_PMSI_NORSS ON MCO_CORA_UF_PMSI
-(NORSS)
-LOGGING
-NOPARALLEL;
-
-
 CREATE INDEX IDX__MCO_RUM_DIAGS__DIAG ON MCO_RUM_DIAGS
 (DIAG)
 LOGGING
@@ -1475,190 +1735,132 @@ LOGGING
 NOPARALLEL;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_V2_VMED_F
+CREATE OR REPLACE VIEW MCO_RUM_TEMPORIS
 AS 
-select ANMOISADMIN, IEP, NORSS, DTADM, TYPE_EPMSI, CDUCD, CDUCD7, TYPEPREST, INDICATION, INSCRIPTION, NBADM, PRIX LIBINDICATION from PMSI.EPMSI_1_V2_VMED_A
-where INSCRIPTION = 'non' or (INSCRIPTION is NULL and INDICATION not like 'I99999%')
-order by ANMOISADMIN;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_V2_VMED_A
-AS 
-select m.ANADMIN||m.MOISADMIN as ANMOISADMIN, r.TYPE_FIN, r.TYPE_FIN ||' / ' ||  l.LIB_TYPE as TYPE_EPMSI, r.NAS as IEP, r.NORSS, m.CDUCD, 
-        substr(CDUCD, 6,7) as CDUCD7, m.TYPEPREST, m.INDICATION,  m.PRIX, m.NBADM, m.DELAI, 
-        to_date(a.DTENT, 'yyyy-mm-dd') as DTENT, to_date(a.DTSORT, 'yyyy-mm-dd') as DTSORT, 
-        to_date(a.DTENT, 'yyyy-mm-dd') + DELAI as DTADM,  i.SPECIALITE, i.INSCRIPTION, i.LABO, i.CLASSIND1,i.DATEDEBUT as DTDEB_INDIC, i.LIBINDICATION from
-        PMSI.MCO_RSA_VALO r 
-        inner join PMSI.MCO_RSA_MED m 
-        on r.NORSS = m.NORSS and r.ANSOR = '2020'  and m.TYPEPREST = '06'
-        inner join PMSI.MCO_RSA_ANO a
-        on r.NORSS = a.NORSS
-        left join PMSI.DOC_VALO_LIB_TYPE_FIN l on r.TYPE_FIN = l.TYPE_FIN
-        left join 
-        (select * from         
-(select max(ANADMIN||MOISADMIN) as PERIODE from PMSI.MCO_RSA_MED) per 
-        inner join PMSI.REF_MED_ATIH_INDICATIONS i on i.PERIODE = per.PERIODE) i on m.CDUCD = i.UCD13 and m.INDICATION = i.CODE_LES;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_V2_MATU_B
-AS 
-select ANMOISADMIN, TYPE_FIN, TYPE_EPMSI, IEP, NORSS, CDUCD, CDUCD7, TYPEPREST, INDICATION, DTADM, DTDEB_INDIC, DTFIN_INDIC,
-PRIX, NBADM, DELAI from PMSI.EPMSI_1_V2_MATU_A where ANMOISADMIN > '201912' and (INSCRIPTION_ATU_POST_ATU is NULL  /*or DTADM not between DTDEB_INDIC and DTFIN_INDIC*/)
-order by ANMOISADMIN;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_V2_MATU_A
-AS 
-select m.ANADMIN||m.MOISADMIN as ANMOISADMIN, r.TYPE_FIN, to_char(r.TYPE_FIN, '9') ||' / ' ||  l.LIB_TYPE as TYPE_EPMSI, r.NAS as IEP, r.NORSS, m.CDUCD, 
-        substr(CDUCD, 6,7) as CDUCD7, m.TYPEPREST, m.INDICATION,  m.PRIX, m.NBADM, m.DELAI, 
-        to_date(a.DTENT, 'yyyy-mm-dd') as DTENT, to_date(a.DTSORT, 'yyyy-mm-dd') as DTSORT, 
-        to_date(a.DTENT, 'yyyy-mm-dd') + DELAI as DTADM, to_date(i.DTDEB_INDIC, 'yyyy-mm-dd') as DTDEB_INDIC, to_date(i.DTFIN_INDIC, 'yyyy-mm-dd') as DTFIN_INDIC, i.INSCRIPTION_ATU_POST_ATU from
-        PMSI.MCO_RSA_VALO r 
-        inner join PMSI.MCO_RSA_MED m 
-        on r.NORSS = m.NORSS and r.ANSOR = '2020'  and m.TYPEPREST = '09'
-        inner join PMSI.MCO_RSA_ANO a
-        on r.NORSS = a.NORSS
-        left join PMSI.DOC_VALO_LIB_TYPE_FIN l on r.TYPE_FIN = l.TYPE_FIN
-        left join (select distinct UCD13, DTFIN_INDIC, PERIODE, DTDEB_INDIC, CODEINDICATION, 'oui' as INSCRIPTION_ATU_POST_ATU from PMSI.REF_ATU_ATIH_INDICATIONS) i on 
-        m.CDUCD = i.UCD13 and m.INDICATION = i.CODEINDICATION and m.ANADMIN||m.MOISADMIN = i.PERIODE and m.ANADMIN > '2019';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_7_CHCR
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.DTENT, a.DTSORT, a.CRSECU, a.CRDNAI, a.CRSEXE, a.CRNODA, A.CRFUSHOSP, A.CRFUSPMSI, A.CRCDTENT, a.CRCDNAI, a.CRCSEXE, 
- a.CRSECU||a.CRDNAI||a.CRSEXE||a.CRNODA||A.CRFUSHOSP||A.CRFUSPMSI||A.CRCDTENT||a.CRCDNAI||a.CRCSEXE as concatenation_cr, A.CRIPP
-from PMSI.MCO_RSA_ANO a
-where a.ANSOR = '2020' and a.CRSECU||a.CRDNAI||a.CRSEXE||a.CRNODA||A.CRFUSHOSP||A.CRFUSPMSI||A.CRCDTENT||a.CRCDNAI||a.CRCSEXE <> '000000000' or CRIPP <> '0';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_SSNA
-AS 
-select a.NAS as IEP, a.NORSS, a.DUREE, b.CDCCAM from
-PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS and a.ANSOR = '2020' and b.ACT = '1' and a.DUREE = 0
-inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.GESTCOMP = '1';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_SDSA
-AS 
-select a.NAS as IEP, a.NORSS, a.DP, a.GHM, u.TYPAUT1, sum(decode(c.DIALYSE, '1', 1, 0)) as top_dialyse
+select poids_relatifs."NORSS",poids_relatifs."ANSOR",poids_relatifs."NORUM",poids_relatifs."DUREE_A",poids_relatifs."DUREE_B",poids_relatifs."CDURM",poids_relatifs."DUREESEJPART",poids_relatifs."DUREESEJPART_A",poids_relatifs."SWITCH_DR",poids_relatifs."DUREESEJPART_B",poids_relatifs."UN_RUM",poids_relatifs."NB_RUM_RSS", poids_total.DUREESEJPART_TOT_A, poids_relatifs.DUREESEJPART_A / poids_total.DUREESEJPART_TOT_A as POIDS_RUM from 
+(
+select a.NORSS, a.ANSOR, b.NORUM, a.DUREE as DUREE_A, decode(a.DUREE, 0, 1, DUREE) as DUREE_B, b.CDURM, b.DUREESEJPART,
+decode(b.DUREESEJPART,0,1, b.DUREESEJPART) as DUREESEJPART_A, 
+decode(b.DUREESEJPART,0,1, 0) as switch_dr,DUREESEJPART as DUREESEJPART_B, 1 as UN_RUM,
+a.NBRUM as NB_RUM_RSS 
 from PMSI.MCO_RSA_RSA a
-inner join PMSI.MCO_RSA_UM u on a.NORSS = u.NORSS and substr(u.TYPAUT1,1,3) <> '23' and a.ANSOR = '2020' and DP in ('Z491', 'Z492') and a.RSACMD = '28'
-inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS 
-left join (select * from PMSI.OVA_CCAMINFO) c on b.CDCCAM = c.CDCCAM 
-group by a.NAS, a.NORSS, a.DP, a.GHM, u.TYPAUT1
-having sum(decode(c.DIALYSE, '1', 1, 0)) = 0;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_GMDPC
-AS 
-select a.NAS as IEP, a.NORSS, a.DP, a.GHM from
-(select * from PMSI.MCO_RSA_RSA a where 
-a.ECHPMSI in ('8', 'N') and a.SCHPMSI = '8' ) a
-inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and b.DPCHIR = 1 and a.ANSOR = '2020'
-inner join PMSI.OVA_GHMINFO d on a.GHM = d.GHM and d.TGHM = 'M'
-left join (select NORSS, DIAG from PMSI.MCO_RSA_DIAGS where DIAG like 'Z53%') c on a.NORSS = c.NORSS where c.DIAG is NULL;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_DPSA
-AS 
-select a.NAS as IEP, a.NORSS, a.DP
-from PMSI.MCO_RSA_RSA a 
-inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and a.ANSOR = '2020' and b.DPACTE = '1' and a.NA = 0
-left join (select NORSS, DIAG from PMSI.MCO_RSA_DIAGS where DIAG like 'Z53%') c on a.NORSS = c.NORSS where c.DIAG is NULL;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_CCIA
-AS 
-select distinct a.NAS as IEP, a.GHM, a.NORSS, c.DIAG from
-PMSI.MCO_RSA_RSA a 
-inner join (select * from PMSI.MCO_RSA_DIAGS where POSITION = 5) c on a.NORSS = c.NORSS and a.ANSOR = '2020'
-inner join PMSI.OVA_DIAGINFO d on c.DIAG = d.DIAG and d.COMPIMPRECIS = '1'
-left join (select * from PMSI.MCO_RSA_DIAGS where substr(DIAG,1,3) between 'T80' and 'T88') e on a.NORSS = e.NORSS where e.DIAG is NULL;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_ACD
-AS 
-select a.NAS as IEP, a.NORSS, b.CDCCAM, b.ACT, b.DELAI, b.NBEXEC  as nb
-from PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_ACTES b on a.ANSOR = '2020' and a.NORSS = b.NORSS and b.ACT = '1'
-inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.UNICHIR = '1'
-where b.NBEXEC > 1;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_ABSD
-AS 
-select a.NAS as IEP, a.NORSS, a.DP, sum(decode(c.BRULURE, '1', 1, 0)) as top_brulure_diag, sum(decode(e.BRULE, '1', 1, 0)) as top_brulure_acte
+inner join PMSI.MCO_RUM_RUM b
+on a.NORSS = b.NORSS /* and b.NORSS = '5748030'*/) poids_relatifs
+left join (
+select a.NORSS, sum(decode(b.DUREESEJPART,0,1, b.DUREESEJPART)) as DUREESEJPART_TOT_A
 from PMSI.MCO_RSA_RSA a
-inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.GHM <> '09Z02Z'
-inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG
-inner join PMSI.MCO_RSA_ACTES d on a.NORSS = d.NORSS 
-inner join PMSI.OVA_CCAMINFO e on d.CDCCAM = e.CDCCAM
-group by a.NAS, a.NORSS, a.DP
-having sum(decode(c.BRULURE, '1', 1, 0)) = 0 and sum(decode(e.BRULE, '1', 1, 0)) > 0;
+inner join PMSI.MCO_RUM_RUM b
+on a.NORSS = b.NORSS -- and b.NORSS = '5748030'
+group by a.NORSS, a.DUREE) poids_total 
+on poids_relatifs.NORSS = poids_total.NORSS;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_6_AASSN
+CREATE OR REPLACE VIEW MCO_RUM_TEMPORIS_UM
 AS 
-select a.NAS as IEP, a.NORSS, count(distinct b.CdCCAM) as NB_ACTES, listagg(b.CDCCAM, ', ') within group (order by a.NORSS) as CODES_ACTES  from
-(select *  from PMSI.MCO_RSA_RSA where RSACMD <> '90' and RSACMD <> '28' and (not (SCHPMSI in ('6', '7') and DEST = '1')) and SCHPMSI <> '9' and (TYPESEJ <> 'B' or TYPESEJ is NULL) and DUREE = 0 and ANSOR = '2020') a
-inner join (select distinct NORSS, CDCCAM from PMSI.MCO_RSA_ACTES) b on
-a.NORSS = b.NORSS  
-inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.ZJATYPIQUE = '1' and c.SEANCE = '0'
-group by a.NAS, a.NORSS;
+select poids_relatifs."NORSS",poids_relatifs."ANSOR",poids_relatifs."DUREE_A",poids_relatifs."DUREE_B",poids_relatifs."CDURM",poids_relatifs."DUREESEJPART",poids_relatifs."DUREESEJPART_A",poids_relatifs."DUREESEJPART_B",poids_relatifs."UN_RUM",poids_relatifs."NB_RUM_RSS", poids_total.DUREESEJPART_TOT_A, poids_relatifs.DUREESEJPART_A / poids_total.DUREESEJPART_TOT_A as POIDS_RUM from 
+(
+select a.NORSS, a.ANSOR, a.DUREE as DUREE_A, decode(a.DUREE, 0, 1, DUREE) as DUREE_B, b.CDURM, sum(b.DUREESEJPART) as DUREESEJPART,
+sum(decode(b.DUREESEJPART,0,1, b.DUREESEJPART)) as DUREESEJPART_A, sum(DUREESEJPART) as DUREESEJPART_B, sum(1) as UN_RUM,
+a.NBRUM as NB_RUM_RSS 
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RUM_RUM b
+on a.NORSS = b.NORSS /* and b.NORSS = '5748030'*/
+group by a.ANSOR, a.NORSS, a.DUREE, b.CDURM,a.NBRUM
+) poids_relatifs
+left join (
+select a.NORSS, sum(decode(b.DUREESEJPART,0,1, b.DUREESEJPART)) as DUREESEJPART_TOT_A
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RUM_RUM b
+on a.NORSS = b.NORSS -- and b.NORSS = '5748030'
+group by a.NORSS, a.DUREE) poids_total 
+on poids_relatifs.NORSS = poids_total.NORSS;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_KIDPDR
+CREATE OR REPLACE VIEW MCO_RUM_DUREE2
 AS 
-select distinct a.NAS as IEP, a.NORSS, a.DP, a.DR, a.GHM
-from PMSI.MCO_RSA_RSA a where a.ANSOR = '2020'  and (
-(a.DP in ('Z511', 'Z5101') and (not (
-(DR is not NULL AND (substr(a.DR,1,3) between 'C00' and 'C97') OR (substr(a.DR,1,3) between 'D00' and 'D09') OR (substr(a.DR,1,3) between 'D37' and 'D48'))) OR 
-DR is NULL)) OR
-(a.DP like 'Z08%' and (not (
-(DR is not NULL AND (substr(a.DR,1,3) between 'C00' and 'C97') OR (substr(a.DR,1,3) between 'D00' and 'D09') OR (a.DR like 'Z85%'))) OR 
-DR is NULL))
-);
+select a.NORSS, a.DUREE, a.ANSOR, b.CDURM, b.NORUM, a.NBRUM, b.DUREESEJPART, 
+case when (a.NBRUM > 1 and substr(b.NORUM,8,10) = '01' and b.DUREESEJPART = 0) THEN 1 ELSE b.DUREESEJPART END as DUREESEJPART2,
+case when (a.NBRUM > 1 and substr(b.NORUM,8,10) = '01' and b.DUREESEJPART = 0) THEN 1 ELSE 0 END as FLAG_CHANGEDUREE  from
+PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_ISD
+CREATE OR REPLACE VIEW MCO_RUM_TEMPORIS2
 AS 
-select distinct a.NAS as IEP,  a.NORSS, b.DIAG, case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
-when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end as type_diagnostic from
-(select *  from PMSI.MCO_RSA_RSA where  ANSOR = '2020') a
-inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS
-inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and c.SEXD <> a.SEXE and c.SEXD in ('1', '2')
-order by case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
-when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end;
+select poids_relatifs."NORSS",poids_relatifs."NORUM",poids_relatifs."DUREE_A",poids_relatifs."DUREE_B",poids_relatifs."CDURM",poids_relatifs."DUREESEJPART",poids_relatifs."DUREESEJPART_A",poids_relatifs."DUREESEJPART_B",poids_relatifs."UN_RUM",poids_relatifs."NB_RUM_RSS", poids_total.DUREESEJPART_TOT_A, poids_relatifs.DUREESEJPART_A / poids_total.DUREESEJPART_TOT_A as POIDS_RUM from 
+(
+select a.NORSS, b.NORUM, a.DUREE as DUREE_A, decode(a.DUREE, 0, 1, a.DUREE) as DUREE_B, b.CDURM, b.DUREESEJPART2 as DUREESEJPART,
+decode(b.DUREESEJPART2,0,1, b.DUREESEJPART2) as DUREESEJPART_A, DUREESEJPART2 as DUREESEJPART_B, 1 as UN_RUM,
+a.NBRUM as NB_RUM_RSS 
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RUM_DUREE2 b
+on a.NORSS = b.NORSS /* and b.NORSS = '5748030'*/) poids_relatifs
+left join (
+select a.NORSS, sum(decode(b.DUREESEJPART2,0,1, b.DUREESEJPART2)) as DUREESEJPART_TOT_A
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RUM_DUREE2 b
+on a.NORSS = b.NORSS -- and b.NORSS = '5748030'
+group by a.NORSS, a.DUREE) poids_total 
+on poids_relatifs.NORSS = poids_total.NORSS;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_IDA23C02
+CREATE OR REPLACE VIEW MEMO_IP
 AS 
-select distinct a.NAS as IEP,  a.NORSS, a.DP, b.CDCCAM from
-(select *  from PMSI.MCO_RSA_RSA where RSACMD = '23' and RSATYPE = 'C' and RSANUM = '02' and DUREE > 1 and ANSOR = '2020') a
-inner join (select distinct NORSS, CDCCAM from PMSI.MCO_RSA_ACTES) b on
-a.NORSS = b.NORSS  
-inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.DGCPT669 = '0';
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART_A) as DMR,sum(DUREESEJPART) as DMRUM, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS,a.ANSEQTA, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2020 --and a.NORSS = '5748030'
+) ac 
+left join (select * from PMSI.OVA_GHMINFO) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '2050'
+group by CDURM
+order by CDURM;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_IAD
+CREATE OR REPLACE VIEW MEMO_IP_21
 AS 
-select distinct a.NAS as IEP, a.NORSS, b.DIAG, case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
-when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end as type_diagnostic, case when (AGEJR is not NULL) then round(AGEJR / 365.25, 0) ELSE AGEAN end as AGE,
-a.AGEAN, a.AGEJR,
-c.CL1V, c.CL2V, c.CL3V, c.CL4V, c.CL5V, c.CL6V from
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART) as DMR, sum(DUREESEJPART_A) as DMR2, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP, 
+round(AVG(decode(DUREESEJPART, 0, 1, DUREESEJPART)),2) as DMS_RUM_BRUTE, 
+round(AVG(DUREESEJPART),2) as DMS_RUM, 
+round(AVG(decode(DUREESEJPART, 0, NULL, DUREESEJPART)),2) as DMS_RUM_NON0,
+round(AVG(decode(RSACMD, '28', NULL, DUREESEJPART)),2) as DMS_RUM_NON28 from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS, a.RSACMD, a.DUREE, a.ANSEQTA, b.DUREESEJPART_TOT_A, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2021 and a.RSACMD not in ('28', '90') /*aand GHM not like '28Z%' and (a.TYPESEJ <> 'B' OR a.TYPESEJ is NULL) nd GHM not like '23Z02%'  --and a.NORSS = '5748030' */
+) ac 
+inner join (select GHM, nvl(DMS,0) as DMS, ANNEE from PMSI.OVA_GHMINFO where DMS is not NULL) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '1070'
+group by CDURM
+order by CDURM;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRAA
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
 PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020'
-inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and (
-(a.AGEJR < 29 and a.AGEJR is not NULL and c.CL1V = '1') OR
-((a.AGEJR BETWEEN 29 and 364) and c.CL2V = '1') OR
-((((a.AGEJR > 364 and a.AGEJR is not NULL) or a.AGEAN < 10)) and c.CL3V = '1') OR
-((a.AGEAN BETWEEN 10 and 19) and c.CL4V = '1') OR
-((a.AGEAN BETWEEN 20 and 64) and c.CL5V = '1') OR
-((a.AGEAN > 64) and c.CL6V = '1')
-)
-order by case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
-when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end, AGE;
+inner join PMSI.OVA_DIAGINFO b on a.DR = b.DIAG and b.AFFAIG = '1' and  a.ANSOR = '2020';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAT_B
+AS 
+select distinct b.NAS as IEP, b.NORSS, a.DIAG, b.DP from
+PMSI.MCO_RSA_RSA b 
+inner join PMSI.MCO_RSA_DIAGS a on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.POSITION in ('3', '5') 
+inner join PMSI.OVA_DIAGINFO c2 on b.DP = c2.DIAG and c2.TINTOX = '0'  
+inner join PMSI.OVA_DIAGINFO c on a.DIAG = c.DIAG and c.TINTOX = '1';
 
 
 CREATE OR REPLACE VIEW EPMSI_1_Q_5_GBSDA
@@ -1674,98 +1876,77 @@ having sum(decode(c.BRULUREBIS, '0', 0, 1)) = 0
 inner join PMSI.MCO_RSA_DIAGS a2 on  a1.NORSS = a2.NORSS and a2.POSITION = 5;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRI
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_GMDPC
 AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, case when c.IMPRECIS = '1' THEN '1 - DR imprécis' ELSE '2 - DR très imprécis' END as niveau_imprecision from
+select a.NAS as IEP, a.NORSS, a.DP, a.GHM from
+(select * from PMSI.MCO_RSA_RSA a where 
+a.ECHPMSI in ('8', 'N') and a.SCHPMSI = '8' ) a
+inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and b.DPCHIR = 1 and a.ANSOR = '2020'
+inner join PMSI.OVA_GHMINFO d on a.GHM = d.GHM and d.TGHM = 'M'
+left join (select NORSS, DIAG from PMSI.MCO_RSA_DIAGS where DIAG like 'Z53%') c on a.NORSS = c.NORSS where c.DIAG is NULL;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_ACD
+AS 
+select a.NAS as IEP, a.NORSS, b.CDCCAM, b.ACT, b.DELAI, b.NBEXEC  as nb
+from PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RSA_ACTES b on a.ANSOR = '2020' and a.NORSS = b.NORSS and b.ACT = '1'
+inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.UNICHIR = '1'
+where b.NBEXEC > 1;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_DPSA
+AS 
+select a.NAS as IEP, a.NORSS, a.DP
+from PMSI.MCO_RSA_RSA a 
+inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and a.ANSOR = '2020' and b.DPACTE = '1' and a.NA = 0
+left join (select NORSS, DIAG from PMSI.MCO_RSA_DIAGS where DIAG like 'Z53%') c on a.NORSS = c.NORSS where c.DIAG is NULL;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_SDSA
+AS 
+select a.NAS as IEP, a.NORSS, a.DP, a.GHM, u.TYPAUT1, sum(decode(c.DIALYSE, '1', 1, 0)) as top_dialyse
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RSA_UM u on a.NORSS = u.NORSS and substr(u.TYPAUT1,1,3) <> '23' and a.ANSOR = '2020' and DP in ('Z491', 'Z492') and a.RSACMD = '28'
+inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS 
+left join (select * from PMSI.OVA_CCAMINFO) c on b.CDCCAM = c.CDCCAM 
+group by a.NAS, a.NORSS, a.DP, a.GHM, u.TYPAUT1
+having sum(decode(c.DIALYSE, '1', 1, 0)) = 0;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_ABSD
+AS 
+select a.NAS as IEP, a.NORSS, a.DP, sum(decode(c.BRULURE, '1', 1, 0)) as top_brulure_diag, sum(decode(e.BRULE, '1', 1, 0)) as top_brulure_acte
+from PMSI.MCO_RSA_RSA a
+inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.GHM <> '09Z02Z'
+inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG
+inner join PMSI.MCO_RSA_ACTES d on a.NORSS = d.NORSS 
+inner join PMSI.OVA_CCAMINFO e on d.CDCCAM = e.CDCCAM
+group by a.NAS, a.NORSS, a.DP
+having sum(decode(c.BRULURE, '1', 1, 0)) = 0 and sum(decode(e.BRULE, '1', 1, 0)) > 0;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_SSNA
+AS 
+select a.NAS as IEP, a.NORSS, a.DUREE, b.CDCCAM from
 PMSI.MCO_RSA_RSA a 
-inner join PMSI.OVA_DIAGINFO c on a.DR = c.DIAG and c.IMPRECIS <> '0' and a.ANSOR = '2020';
+inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS and a.ANSOR = '2020' and b.ACT = '1' and a.DUREE = 0
+inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.GESTCOMP = '1';
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRDPNZ
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_CCIA
 AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
-PMSI.MCO_RSA_RSA a where a.ANSOR = '2020' and (substr(a.DP,1,1) <> 'Z' OR a.DP is NULL) and a.DR is not NULL;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRAA
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
+select distinct a.NAS as IEP, a.GHM, a.NORSS, c.DIAG from
 PMSI.MCO_RSA_RSA a 
-inner join PMSI.OVA_DIAGINFO b on a.DR = b.DIAG and b.AFFAIG = '1' and  a.ANSOR = '2020';
+inner join (select * from PMSI.MCO_RSA_DIAGS where POSITION = 5) c on a.NORSS = c.NORSS and a.ANSOR = '2020'
+inner join PMSI.OVA_DIAGINFO d on c.DIAG = d.DIAG and d.COMPIMPRECIS = '1'
+left join (select * from PMSI.MCO_RSA_DIAGS where substr(DIAG,1,3) between 'T80' and 'T88') e on a.NORSS = e.NORSS where e.DIAG is NULL;
 
 
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZSL
+CREATE OR REPLACE VIEW MCO_RSA_DAS
 AS 
-select distinct a.NAS as IEP,  a.NORSS, a.DP from
-(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020' and substr(DP,1,1) = 'Z' and DUREE > 15 and RSACMD <> '28' and DP not in ('Z515', 'Z431', 'Z432', 'Z433') and substr(DP,1,3) <> 'Z50') a;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZDC
-AS 
-select distinct a.NAS as IEP,  a.NORSS, a.DP from
-(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020' and substr(DP,1,1) = 'Z' and SCHPMSI = '9' and DP not in ('Z515') and substr(DP,1,3) <> 'Z52') a;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZAC
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
-PMSI.MCO_RSA_RSA a 
-inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and b.ZAFFCHR = '1' and  a.ANSOR = '2020' and substr(a.DP,1,1) = 'Z' and DR is NULL;
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPR
-AS 
-select distinct a.NAS as IEP,  a.NORSS, a.DP from
-(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020') a
-inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.ZINHAB = '1';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPNZ
-AS 
-select distinct a.NAS as IEP, a.GHM, a.DUREE, a.NORSS, a.DP, b.CDCCAM from
-PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.DUREE < 6 and  
-substr(a.DP,1,3) not in ('M00', 'M01', 'M86', 'M96', 'T80', 'T81', 'T82', 'T83', 'T84', 'T85', 'T86', 'T87', 'T88') and substr(DP,1,1) <> 'Z'
-inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.REQZ = '1';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPI
-AS 
-select distinct a.NAS as IEP,  a.NORSS, a.DP, a.DR,  case when c.IMPRECIS = '1' THEN '1 - DP imprécis' ELSE '2 - DP très imprécis' END as niveau_imprecision from
-(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020') a
-inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.IMPRECIS <> '0';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAT_B
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.DIAG, b.DP from
-PMSI.MCO_RSA_DIAGS a 
-inner join PMSI.MCO_RSA_RSA b on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.POSITION = '5' 
-inner join PMSI.OVA_DIAGINFO c on a.DIAG = c.DIAG and c.TINTOX = '1'  
-inner join PMSI.OVA_DIAGINFO c2 on b.DP = c2.DIAG and c2.TINTOX = '0';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAR
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, b.DIAG from
-PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020' and b.POSITION = '5'
-inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and c.RARE <> '0';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAI
-AS 
-select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, b.DIAG, case when c.IMPRECIS = '1' THEN '1 - DAS Imprécis' ELSE '2 - DAS très imprécis' END as niveau_imprecision from
-PMSI.MCO_RSA_RSA a 
-inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020' and b.POSITION = '5'
-inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and c.IMPRECIS <> '0';
-
-
-CREATE OR REPLACE VIEW EPMSI_1_Q_4_NEXH
-AS 
-select NORSS, GHM, DUREE, NBJRBS
-from PMSI.MCO_RSA_RSA WHERE 
-NBJRBS > 30 and ANSOR = '2020' and RSACOMPX in ('Z', '1', '2', 'A', 'B') and GHM <> '23Z02Z';
+select a.ANSOR, a.NORSS, a.DIAG as DAS
+from PMSI.MCO_RSA_DIAGS a where a.POSITION = 5;
 
 
 CREATE OR REPLACE VIEW EPMSI_1_Q_13_DMIMAT_B
@@ -1790,42 +1971,211 @@ having
 order by CDUCD, sum(NBADM)  desc;
 
 
+CREATE OR REPLACE VIEW EPMSI_1_Q_7_CHCR_A
+AS 
+select a.NAS as IEP, a.NORSS, b.REC_TOTALE, c.GHM, a.FACTAM, a.MOTNOFACT, a.DTENT, a.DTSORT, a.CRSECU, a.CRDNAI, a.CRSEXE, a.CRNODA, A.CRFUSHOSP, A.CRFUSPMSI, A.CRCDTENT, a.CRCDNAI, a.CRCSEXE,
+ a.CRSECU||a.CRDNAI||a.CRSEXE||a.CRNODA||A.CRFUSHOSP||A.CRFUSPMSI||A.CRCDTENT||a.CRCDNAI||a.CRCSEXE as concatenation_cr
+from PMSI.MCO_RSA_ANO a
+inner join PMSI.MCO_RSA_VALO b on a.NORSS = b.NORSS 
+inner join PMSI.MCO_RSA_RSA c on a.NORSS = c.NORSS 
+where (a.ANSOR = '2020' and a.CRSECU||a.CRDNAI||a.CRSEXE||a.CRNODA||A.CRFUSHOSP||A.CRFUSPMSI||A.CRCDTENT||a.CRCDNAI||a.CRCSEXE <> '000000000' );
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_6_AASSN
+AS 
+select a.NAS as IEP, a.NORSS, count(distinct b.CdCCAM) as NB_ACTES, listagg(b.CDCCAM, ', ') within group (order by a.NORSS) as CODES_ACTES  from
+(select *  from PMSI.MCO_RSA_RSA where RSACMD <> '90' and RSACMD <> '28' and (not (SCHPMSI in ('6', '7') and DEST = '1')) and SCHPMSI <> '9' and (TYPESEJ <> 'B' or TYPESEJ is NULL) and DUREE = 0 and ANSOR = '2020') a
+inner join (select distinct NORSS, CDCCAM from PMSI.MCO_RSA_ACTES) b on
+a.NORSS = b.NORSS  
+inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.ZJATYPIQUE = '1' and c.SEANCE = '0'
+group by a.NAS, a.NORSS;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_IDA23C02
+AS 
+select distinct a.NAS as IEP,  a.NORSS, a.DP, b.CDCCAM from
+(select *  from PMSI.MCO_RSA_RSA where RSACMD = '23' and RSATYPE = 'C' and RSANUM = '02' and DUREE > 1 and ANSOR = '2020') a
+inner join (select distinct NORSS, CDCCAM from PMSI.MCO_RSA_ACTES) b on
+a.NORSS = b.NORSS  
+inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.DGCPT669 = '0';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_ISD
+AS 
+select distinct a.NAS as IEP,  a.NORSS, b.DIAG, case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
+when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end as type_diagnostic from
+(select *  from PMSI.MCO_RSA_RSA where  ANSOR = '2020') a
+inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS
+inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and c.SEXD <> a.SEXE and c.SEXD in ('1', '2')
+order by case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
+when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPR
+AS 
+select distinct a.NAS as IEP,  a.NORSS, a.DP from
+(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020') a
+inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.ZINHAB = '1';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZSL
+AS 
+select distinct a.NAS as IEP,  a.NORSS, a.DP from
+(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020' and substr(DP,1,1) = 'Z' and DUREE > 15 and RSACMD <> '28' and DP not in ('Z515', 'Z431', 'Z432', 'Z433') and substr(DP,1,3) <> 'Z50') a;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZDC
+AS 
+select distinct a.NAS as IEP,  a.NORSS, a.DP from
+(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020' and substr(DP,1,1) = 'Z' and SCHPMSI = '9' and DP not in ('Z515') and substr(DP,1,3) <> 'Z52') a;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPI
+AS 
+select distinct a.NAS as IEP,  a.NORSS, a.DP, a.DR,  case when c.IMPRECIS = '1' THEN '1 - DP imprécis' ELSE '2 - DP très imprécis' END as niveau_imprecision from
+(select *  from PMSI.MCO_RSA_RSA where ANSOR = '2020') a
+inner join PMSI.OVA_DIAGINFO c on a.DP = c.DIAG and c.IMPRECIS <> '0';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_4_NEXH
+AS 
+select NORSS, GHM, DUREE, NBJRBS
+from PMSI.MCO_RSA_RSA WHERE 
+NBJRBS > 30 and ANSOR = '2020' and RSACOMPX in ('Z', '1', '2', 'A', 'B') and GHM <> '23Z02Z';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_IAD
+AS 
+select distinct a.NAS as IEP, a.NORSS, b.DIAG, case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
+when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end as type_diagnostic, case when (AGEJR is not NULL) then round(AGEJR / 365.25, 0) ELSE AGEAN end as AGE,
+a.AGEAN, a.AGEJR,
+c.CL1V, c.CL2V, c.CL3V, c.CL4V, c.CL5V, c.CL6V from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2020'
+inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and (
+(a.AGEJR < 29 and a.AGEJR is not NULL and c.CL1V = '1') OR
+((a.AGEJR BETWEEN 29 and 364) and c.CL2V = '1') OR
+((((a.AGEJR > 364 and a.AGEJR is not NULL) or a.AGEAN < 10)) and c.CL3V = '1') OR
+((a.AGEAN BETWEEN 10 and 19) and c.CL4V = '1') OR
+((a.AGEAN BETWEEN 20 and 64) and c.CL5V = '1') OR
+((a.AGEAN > 64) and c.CL6V = '1')
+)
+order by case b.POSITION when 5 THEN 'Diagnostic associé' when 3 then 'Diagnostic principal' when 1 then 'Diagnostic principal' 
+when 4 then 'Diagnostic relié' when 2 then 'Diagnostic relié' end, AGE;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPNZ
+AS 
+select distinct a.NAS as IEP, a.GHM, a.DUREE, a.NORSS, a.DP, b.CDCCAM from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RSA_ACTES b on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.DUREE < 6 and  
+substr(a.DP,1,3) not in ('M00', 'M01', 'M86', 'M96', 'T80', 'T81', 'T82', 'T83', 'T84', 'T85', 'T86', 'T87', 'T88') and substr(DP,1,1) <> 'Z'
+inner join PMSI.OVA_CCAMINFO c on b.CDCCAM = c.CDCCAM and c.REQZ = '1';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRI
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, case when c.IMPRECIS = '1' THEN '1 - DR imprécis' ELSE '2 - DR très imprécis' END as niveau_imprecision from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.OVA_DIAGINFO c on a.DR = c.DIAG and c.IMPRECIS <> '0' and a.ANSOR = '2020';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAI
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, b.DIAG, case when c.IMPRECIS = '1' THEN '1 - DAS Imprécis' ELSE '2 - DAS très imprécis' END as niveau_imprecision from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RSA_DIAGS b on a.NORSS = b.NORSS and a.ANSOR = '2021' and b.POSITION = '5'
+inner join PMSI.OVA_DIAGINFO c on b.DIAG = c.DIAG and c.IMPRECIS <> '0' and c.ANNEE = '2021';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DAR
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR, b.DAS from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RSA_DAS b on a.NORSS = b.NORSS and a.ANSOR = '2020' 
+inner join PMSI.OVA_DIAGINFO c on b.DAS = c.DIAG and c.RARE <> '0' and c.ANNEE = '2021';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DPZAC
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.OVA_DIAGINFO b on a.DP = b.DIAG and b.ZAFFCHR = '1' and  a.ANSOR = '2020' and substr(a.DP,1,1) = 'Z' and DR is NULL;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_DRDPNZ
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.GHM, a.DUREE, a.DP, a.DR from
+PMSI.MCO_RSA_RSA a where a.ANSOR = '2020' and (substr(a.DP,1,1) <> 'Z' OR a.DP is NULL) and a.DR is not NULL;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_Q_5_KIDPDR
+AS 
+select distinct a.NAS as IEP, a.NORSS, a.DP, a.DR, a.GHM
+from PMSI.MCO_RSA_RSA a where a.ANSOR = '2020'  and (
+(a.DP in ('Z511', 'Z5101') and (not (
+(DR is not NULL AND (substr(a.DR,1,3) between 'C00' and 'C97') OR (substr(a.DR,1,3) between 'D00' and 'D09') OR (substr(a.DR,1,3) between 'D37' and 'D48'))) OR 
+DR is NULL)) OR
+(a.DP like 'Z08%' and (not (
+(DR is not NULL AND (substr(a.DR,1,3) between 'C00' and 'C97') OR (substr(a.DR,1,3) between 'D00' and 'D09') OR (a.DR like 'Z85%'))) OR 
+DR is NULL))
+);
+
+
+CREATE OR REPLACE VIEW EPMSI_1_V2_VMED_F
+AS 
+select ANMOISADMIN, IEP, NORSS, DTADM, TYPE_EPMSI, CDUCD, CDUCD7, TYPEPREST, INDICATION, INSCRIPTION, NBADM, PRIX LIBINDICATION from PMSI.EPMSI_1_V2_VMED_A
+where INSCRIPTION = 'non' or (INSCRIPTION is NULL and INDICATION not like 'I99999%')
+order by ANMOISADMIN;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_V2_VMED_A
+AS 
+select m.ANADMIN||m.MOISADMIN as ANMOISADMIN, r.TYPE_FIN, to_char(r.TYPE_FIN, '9') ||' / ' ||  l.LIB_TYPE as TYPE_EPMSI, r.NAS as IEP, r.NORSS, m.CDUCD, 
+        substr(CDUCD, 6,7) as CDUCD7, m.TYPEPREST, m.INDICATION,  m.PRIX, m.NBADM, m.DELAI, 
+        to_date(a.DTENT, 'yyyy-mm-dd') as DTENT, to_date(a.DTSORT, 'yyyy-mm-dd') as DTSORT, 
+        to_date(a.DTENT, 'yyyy-mm-dd') + DELAI as DTADM,  i.SPECIALITE, i.INSCRIPTION, i.LABO, i.CLASSIND1,i.DATEDEBUT as DTDEB_INDIC, i.LIBINDICATION from
+        PMSI.MCO_RSA_VALO r 
+        inner join PMSI.MCO_RSA_MED m 
+        on r.NORSS = m.NORSS and r.ANSOR = '2021'  and m.TYPEPREST = '06'
+        inner join PMSI.MCO_RSA_ANO a
+        on r.NORSS = a.NORSS
+        left join PMSI.DOC_VALO_LIB_TYPE_FIN l on r.TYPE_FIN = l.TYPE_FIN
+        left join 
+        (select * from         
+(select max(ANADMIN||MOISADMIN) as PERIODE from PMSI.MCO_RSA_MED) per 
+        inner join PMSI.REF_MED_ATIH_INDICATIONS i on i.PERIODE = per.PERIODE) i on m.CDUCD = i.UCD13 and m.INDICATION = i.CODE_LES;
+
+
+CREATE OR REPLACE VIEW EPMSI_1_V2_MATU_A
+AS 
+select m.ANADMIN||m.MOISADMIN as ANMOISADMIN, r.TYPE_FIN, to_char(r.TYPE_FIN, '9') ||' / ' ||  l.LIB_TYPE as TYPE_EPMSI, r.NAS as IEP, r.NORSS, m.CDUCD, 
+        substr(CDUCD, 6,7) as CDUCD7, m.TYPEPREST, m.INDICATION,  m.PRIX, m.NBADM, m.DELAI, 
+        to_date(a.DTENT, 'yyyy-mm-dd') as DTENT, to_date(a.DTSORT, 'yyyy-mm-dd') as DTSORT, 
+        to_date(a.DTENT, 'yyyy-mm-dd') + DELAI as DTADM, to_date(i.DTDEB_INDIC, 'yyyy-mm-dd') as DTDEB_INDIC, to_date(i.DTFIN_INDIC, 'yyyy-mm-dd') as DTFIN_INDIC, i.INSCRIPTION_ATU_POST_ATU from
+        PMSI.MCO_RSA_VALO r 
+        inner join PMSI.MCO_RSA_MED m 
+        on r.NORSS = m.NORSS and r.ANSOR = '2021'  and m.TYPEPREST = '09'
+        inner join PMSI.MCO_RSA_ANO a
+        on r.NORSS = a.NORSS
+        left join PMSI.DOC_VALO_LIB_TYPE_FIN l on r.TYPE_FIN = l.TYPE_FIN
+        left join (select distinct UCD13, DTFIN_INDIC, PERIODE, DTDEB_INDIC, CODEINDICATION, 'oui' as INSCRIPTION_ATU_POST_ATU from PMSI.REF_ATU_ATIH_INDICATIONS) i on 
+        m.CDUCD = i.UCD13 and m.INDICATION = i.CODEINDICATION and m.ANADMIN||m.MOISADMIN = i.PERIODE and m.ANADMIN > '2019';
+
+
+CREATE OR REPLACE VIEW EPMSI_1_V2_MATU_B
+AS 
+select ANMOISADMIN, TYPE_FIN, TYPE_EPMSI, IEP, NORSS, CDUCD, CDUCD7, TYPEPREST, INDICATION, DTADM, DTDEB_INDIC, DTFIN_INDIC,
+PRIX, NBADM, DELAI from PMSI.EPMSI_1_V2_MATU_A where ANMOISADMIN > '201912' and (INSCRIPTION_ATU_POST_ATU is NULL  /*or DTADM not between DTDEB_INDIC and DTFIN_INDIC*/)
+order by ANMOISADMIN;
+
+
 CREATE OR REPLACE VIEW DMI_CCAM_STAT_PROP_STEPS
 AS 
 select ROUND(PROP_ASSOCIATIONS,2) as prop_steps, count(*) as taille_liste, sum(NB_DMI_ACTES) as NB_DMI_ACTES, sum(NB_ACTES) as NB_ACTES
 from PMSI.DMI_CCAM_STAT
 group by ROUND(PROP_ASSOCIATIONS,2) 
 order by ROUND(PROP_ASSOCIATIONS,2) desc;
-
-
-CREATE OR REPLACE VIEW DMI_CCAM_STAT
-AS 
-select distinct b.periode, 
-case WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.7 THEN 'Très probable (> 0.7)' 
-     WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.5 THEN 'Probable (> 0.5)'
-     WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.3 THEN 'Assez probable (> 0.3)'
-     WHEN round(a.nb_dmi_actes / b.nb_actes,3) < 0.3 THEN 'Peu probable (< 0.3)' END CATEG_PROB,   
-a.CDCCAM, l.LIBELLE_LONG, a.NB_DMI_ACTES,round(a.MONTANT_DMI / a.NB_DMI_ACTES,1) as MONTANT_DMI , b.nb_actes , b.NB_ACTES - a.NB_DMI_ACTES as NB_DELTA, round(a.nb_dmi_actes / b.nb_actes,3) as prop_associations from
-(select CDCCAM, count(distinct NORUM) as nb_dmi_actes, sum(PRIX) as MONTANT_DMI from 
-PMSI.DMI_CCAM_ASSOCIATIONS where ANSOR < '2020'
-group by CDCCAM) a
-inner join (
-select CDCCAM, count(distinct NORUM) as nb_actes , min(ANSOR) ||' -- '|| max(ANSOR) as periode from
-PMSI.MCO_RUM_ACTES where ANSOR < '2020'
-group by CDCCAM  ) b
-on a.CDCCAM = b.CDCCAM
-inner join PMSI.REF_CCAM_ICR icr on a.CDCCAM = icr.CODE and icr.CLASSANT = 'Y'
-left join PMSI.REF_CCAM_ACTES l on a.CDCCAM = l.CODE
-where b.NB_ACTES - a.NB_DMI_ACTES > 0
-order by NB_DMI_ACTES desc;
-
-
-CREATE OR REPLACE VIEW DMI_CCAM_LISTE_SANS_DMI
-AS 
-select distinct a.ANSOR, s.CATEG_PROB, a.NAS, a.NORUM, a.DTACTE, a.CDCCAM, s.LIBELLE_LONG, s.MONTANT_DMI, s.PROP_ASSOCIATIONS, s.NB_ACTES, s.NB_DMI_ACTES from PMSI.MCO_RUM_ACTES a
-inner join (select * from PMSI.DMI_CCAM_STAT where PROP_ASSOCIATIONS >= 0.6) s on a.CDCCAM = s.CDCCAM and a.ANSOR = '2020' and a.ACT = '1'
-left join PMSI.MCO_RUM_DMI d on a.NAS = d.NAS /*and a.DTACTE = d.DTPOSE*/ where CDLPP is NULL
-order by PROP_ASSOCIATIONS desc;
 
 
 CREATE OR REPLACE VIEW DMI_CCAM_ASSOCIATIONS
@@ -1841,5 +2191,311 @@ CDCCAM not like 'DEQP%' and
 CDCCAM <> 'ANRP001' and
 ACT = '1'
 and substr(CDCCAM,4,1) not in ('X', 'K', 'H');
+
+
+CREATE OR REPLACE VIEW DMI_CCAM_LISTE_SANS_DMI
+AS 
+select distinct a.ANSOR, s.CATEG_PROB, a.NAS, a.NORUM, a.DTACTE, a.CDCCAM, s.LIBELLE_LONG, s.MONTANT_DMI, s.PROP_ASSOCIATIONS, s.NB_ACTES, s.NB_DMI_ACTES from PMSI.MCO_RUM_ACTES a
+inner join (select * from PMSI.DMI_CCAM_STAT where ((
+PROP_ASSOCIATIONS >= 0.7 OR 
+(MONTANT_DMI > 1000 and PROP_ASSOCIATIONS > 0.5) OR
+(MONTANT_DMI > 2000 and PROP_ASSOCIATIONS > 0.2) OR 
+(MONTANT_DMI > 5000 and PROP_ASSOCIATIONS > 0.1)) and NB_DMI_ACTES > 1)
+) s on a.CDCCAM = s.CDCCAM and a.ANSOR = '2021' and a.ACT = '1'
+left join PMSI.MCO_RUM_DMI d on a.NAS = d.NAS /*and a.DTACTE = d.DTPOSE*/ where CDLPP is NULL
+order by PROP_ASSOCIATIONS desc;
+
+
+CREATE OR REPLACE VIEW DMI_CCAM_STAT
+AS 
+select distinct b.periode, 
+case WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.7 THEN 'Très probable (> 0.7)' 
+     WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.5 THEN 'Probable (> 0.5)'
+     WHEN round(a.nb_dmi_actes / b.nb_actes,3) >= 0.3 THEN 'Assez probable (> 0.3)'
+     WHEN round(a.nb_dmi_actes / b.nb_actes,3) < 0.3 THEN 'Peu probable (< 0.3)' END CATEG_PROB,   
+a.CDCCAM, l.LIBELLE_LONG, a.NB_DMI_ACTES,round(a.MONTANT_DMI / a.NB_DMI_ACTES,1) as MONTANT_DMI , b.nb_actes , b.NB_ACTES - a.NB_DMI_ACTES as NB_DELTA, round(a.nb_dmi_actes / b.nb_actes,3) as prop_associations from
+(select CDCCAM, count(distinct NORUM) as nb_dmi_actes, sum(PRIX) as MONTANT_DMI from 
+PMSI.DMI_CCAM_ASSOCIATIONS where ANSOR < '2022'
+group by CDCCAM) a
+inner join (
+select CDCCAM, count(distinct NORUM) as nb_actes , min(ANSOR) ||' -- '|| max(ANSOR) as periode from
+PMSI.MCO_RUM_ACTES where ANSOR < '2022'
+group by CDCCAM  ) b
+on a.CDCCAM = b.CDCCAM
+inner join PMSI.REF_CLASSANT_AM_ET_FG icr on a.CDCCAM = icr.CODE --and icr.CLASSANT = 'Y'
+left join PMSI.REF_CCAM_ACTES l on a.CDCCAM = l.CODE
+where b.NB_ACTES - a.NB_DMI_ACTES > 0
+order by NB_DMI_ACTES desc;
+
+
+CREATE OR REPLACE VIEW MEMO_DMS_21
+AS 
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART) as DMR, sum(DUREESEJPART_A) as DMR2, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP, 
+round(AVG(decode(DUREESEJPART, 0, 1, DUREESEJPART)),2) as DMS_RUM_BRUTE, 
+round(AVG(DUREESEJPART),2) as DMS_RUM, 
+round(AVG(decode(DUREESEJPART, 0, NULL, DUREESEJPART)),2) as DMS_RUM_NON0,
+round(AVG(decode(RSACMD, '28', NULL, DUREESEJPART)),2) as DMS_RUM_NON28 from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS, a.RSACMD, a.DUREE, a.ANSEQTA, b.DUREESEJPART_TOT_A, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2021 --and a.RSACMD not in ('28', '90') 
+) ac 
+inner join (select GHM, nvl(DMS,0) as DMS, ANNEE from PMSI.OVA_GHMINFO where DMS is not NULL) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '1070'
+group by CDURM
+order by CDURM;
+
+
+CREATE OR REPLACE VIEW MCO_RUM_PRORATA_GHS
+AS 
+select poids_relatifs."NORSS",poids_relatifs."NORUM",poids_relatifs."CDURM",poids_relatifs."DUREESEJPART",poids_relatifs."DUREESEJPART_A",poids_relatifs."UN_RUM",poids_relatifs."REC_BASE_RUM",poids_relatifs."NB_RUM_RSS",  poids_total.DUREESEJPART_TOT_A,
+poids_relatifs.REC_BASE_RUM / poids_total.REC_BASE_RUM_TOT as POIDS_RUM, poids_total.NBRUM  from 
+(
+select a.NORSS, b.NORUM, b.CDURM, b.DUREESEJPART as DUREESEJPART,
+decode(b.DUREESEJPART,0,1, b.DUREESEJPART) as DUREESEJPART_A, 1 as UN_RUM, a.REC_BASE_RUM, 
+a.NBRUM as NB_RUM_RSS 
+from PMSI.MCO_RUM_RUM b
+inner join PMSI.MCO_RUM_VALO a
+on a.NORSS||a.NSEQRUM = b.NORUM and a.REC_BASE_RUM > 0/* and b.NORSS = '5748030'*/) poids_relatifs
+inner join (
+select a.NORSS, a.NBRUM, c.DUREE, sum(a.REC_BASE_RUM) as REC_BASE_RUM_TOT, sum(decode(b.DUREESEJPART,0,1, b.DUREESEJPART)) as DUREESEJPART_TOT_A
+from PMSI.MCO_RUM_RUM b
+inner join PMSI.MCO_RUM_VALO a
+on a.NORSS||a.NSEQRUM = b.NORUM 
+inner join PMSI.MCO_RSA_RSA c on 
+a.NORSS = c.NORSS and c.RSACMD not in ('90')  and /*a.REC_BASE_RUM > 0*/ c.NOGHS <> '9999'
+group by a.NORSS, a.NBRUM, c.DUREE) poids_total 
+on poids_relatifs.NORSS = poids_total.NORSS;
+
+
+CREATE OR REPLACE VIEW DMI_CCAM_LISTE_SANS_DMI_OLD
+AS 
+select a."ANSOR",a."NAS",a."NORUM",a."DTACTE",a."CDCCAM" from (
+select distinct a.ANSOR, a.NAS, a.NORUM, a.DTACTE, a.CDCCAM from PMSI.MCO_RUM_ACTES a
+where a.CDCCAM in (
+'AAKA001', 'AEKA001', 'AELA001', 'AELA002', 'AELB002', 'AFLA003', 'AFLB008', 'AGMA001', 'AHLA003', 
+'AHLA804', 'CBLA001', 'CBLA002', 'CDLA003', 'DASF004', 'DASF005', 'DASF074', 'DBBF198', 'DBLA004', 
+'DBLF001', 'DBLF009', 'DDAF007', 'DDAF008', 'DDAF009', 'DEKA001', 'DEKA002', 'DELA001', 'DELA003', 
+'DELA004', 'DELF001', 'DELF005', 'DELF007', 'DELF013', 'DELF014', 'DELF015', 'DELF016', 'DELF017', 
+'DELF018', 'DELF019', 'DELF020', 'DELF086', 'DEQA001', 'DGAF005', 'DGKA015', 'DGLF001', 'DGLF002', 
+'DGLF003', 'DGLF005', 'DGLF012', 'DHAF001', 'DHSF001', 'EAAF900', 'EAAF902', 'EABA001', 'EACA002', 
+'EACA003', 'EACA007', 'EAJF341', 'EASF001', 'EASF003', 'EASF005', 'EASF007', 'EASF008', 'EASF010', 
+'EASF011', 'EASF012', 'EASF013', 'EBAF001', 'EBAF010', 'EBAF011', 'EBAF014', 'EBSF004', 'ECAF001', 
+'ECAF004', 'ECLF003', 'ECLF004', 'ECPF001', 'ECPF002', 'ECSF002', 'ECSF004', 'EDAF001', 'EDAF002', 
+'EDAF003', 'EDAF005', 'EDAF006', 'EDLF005', 'EDLF006', 'EDLF007', 'EDPF006', 'EDPF008', 'EDPF009', 
+'EDSF003', 'EDSF004', 'EDSF005', 'EDSF009', 'EDSF012', /*'EEAF001', */'EEAF002', /*'EEAF003',*/ 'EEAF004', 
+'EEAF005', 'EEAF006', 'EELF002', 'EEPF001', 'EESF006', 'EGSF002', 'EHCF002', 'EHSF001', 'ENSF001', 
+'GELE008', 'GKKD002', 'GKKE002', 'HEKE001', 'HELE002', 'HEMA010', 'HEME002', 'HGLE001', 'HHLE005', 
+'HMKE001', 'HMLE002', 'HMLE003', 'HMLH001', 'HMLH002', 'HMLH003', 'HNCJ001', 'HNKE001', 'HNLE001', 
+'JCLE004', 'JEKA002', 'JEKA005', 'JEKA006', 'JELA001', 'JELA002', 'JELB003', 'JELE003', 'JHLA002', 
+'JHLA003', 'JHLA004', 'JJPE001', 'LAMA009', 'LBCB001', 'LBCB002', 'LDCA001', 'LDCA005', 'LDCA011', 
+'LDCA013', 'LDFA007', 'LDFA008', 'LDFA011', 'LDPA007', 'LFCA003', 'LFCA004', 'LFCA005', 'LFDA010', 
+'LFFA010', 'LFFA011', 'LFMA001', 'LHCA002', 'LHCA010', 'LHDA002', 'LHMA004', 'MCKA002', 'MEKA003', 
+'MEKA005', 'MEKA006', 'MEKA007', 'MEKA008', 'MEKA010', 'MFKA001', 'MFKA003', 'MGKA002', 'MGKA003', 
+'MHMA001', 'MHMA002', 'MHMA005', 'NEGA004', 'NEKA001', 'NEKA002', 'NEKA003', 'NEKA004', 'NEKA005', 
+'NEKA006', 'NEKA007', 'NEKA008', 'NEKA009', 'NEKA010', 'NEKA011', 'NEKA012', 'NEKA014', 'NEKA015', 
+'NEKA016', 'NEKA017', 'NEKA018', 'NEKA020', 'NEKA021', 'NEKA022', 'NELA001', 'NELA002', 'NEMA018', 
+'NFCA004', 'NFEC001', 'NFEC002', 'NFKA001', 'NFKA002', 'NFKA003', 'NFKA004', 'NFKA005', 'NFKA006', 
+'NFKA007', 'NFKA008', 'NFKA009', 'NFLA001', 'NFLA002', 'NFMA006', 'NGKA001', 'NJMB001', 'QEDA001', 
+'QEDA003', 'QEKA001', 'QEKA002', 'QEMA003', 'QEMA004', 'QEMA006', 'QZKA001'
+) and a.ANSOR = '2021' and a.ACT = '1') a
+left join PMSI.MCO_RUM_DMI d on a.NAS = d.NAS /*and a.DTACTE = d.DTPOSE*/ where CDLPP is NULL;
+
+
+CREATE OR REPLACE VIEW REF_CLASSANT_AM_ET_FG
+AS 
+select distinct CODE from PMSI.REF_CCAM_ICR where CLASSANT = 'Y'
+union 
+select distinct CODE_ACTE from CCAM.FG_CCAM_CARA@corad where CARACTERISTIQUE = '0.0' and VERSION_FG > '18'
+union 
+select "CODE" from PMSI.REF_CCAM_Y_COMPLETE;
+
+
+CREATE OR REPLACE VIEW MCO_RSA_DP
+AS 
+select a.ANSOR, a.NORSS, a.DIAG as DP_RSA
+from PMSI.MCO_RSA_DIAGS a where a.POSITION = 1;
+
+
+CREATE OR REPLACE VIEW MCO_RSA_DR
+AS 
+select a.ANSOR, a.NORSS, a.DIAG as DR_RSA
+from PMSI.MCO_RSA_DIAGS a where a.POSITION = 2;
+
+
+CREATE OR REPLACE VIEW MCO_RUM_DP
+AS 
+select a.ANSOR, a.NORSS||a.NSEQRUM as NORUM, a.DIAG as DP_RUM
+from PMSI.MCO_RSA_DIAGS a where a.POSITION = 3;
+
+
+CREATE OR REPLACE VIEW MCO_RUM_DR
+AS 
+select a.ANSOR, a.NORSS||a.NSEQRUM as NORUM, a.DIAG as DR_RUM
+from PMSI.MCO_RSA_DIAGS a where a.POSITION = 4;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_20
+AS 
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART) as DMR, sum(DUREESEJPART_A) as DMR2, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP, 
+round(AVG(decode(DUREESEJPART, 0, 1, DUREESEJPART)),2) as DMS_RUM_BRUTE, 
+round(AVG(DUREESEJPART),2) as DMS_RUM, 
+round(AVG(decode(DUREESEJPART, 0, NULL, DUREESEJPART)),2) as DMS_RUM_NON0,
+round(AVG(decode(RSACMD, '28', NULL, DUREESEJPART)),2) as DMS_RUM_NON28 from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS, a.RSACMD, a.DUREE, a.ANSEQTA, b.DUREESEJPART_TOT_A, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2020 and a.RSACMD not in ('28', '90') /*aand GHM not like '28Z%' and (a.TYPESEJ <> 'B' OR a.TYPESEJ is NULL) nd GHM not like '23Z02%'  --and a.NORSS = '5748030' */
+) ac 
+inner join (select GHM, nvl(DMS,0) as DMS, ANNEE from PMSI.OVA_GHMINFO where DMS is not NULL) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '1070'
+group by CDURM
+order by CDURM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_18
+AS 
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART) as DMR, sum(DUREESEJPART_A) as DMR2, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP, 
+round(AVG(decode(DUREESEJPART, 0, 1, DUREESEJPART)),2) as DMS_RUM_BRUTE, 
+round(AVG(DUREESEJPART),2) as DMS_RUM, 
+round(AVG(decode(DUREESEJPART, 0, NULL, DUREESEJPART)),2) as DMS_RUM_NON0,
+round(AVG(decode(RSACMD, '28', NULL, DUREESEJPART)),2) as DMS_RUM_NON28 from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS, a.RSACMD, a.DUREE, a.ANSEQTA, b.DUREESEJPART_TOT_A, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2018 and a.RSACMD not in ('28', '90') /*aand GHM not like '28Z%' and (a.TYPESEJ <> 'B' OR a.TYPESEJ is NULL) nd GHM not like '23Z02%'  --and a.NORSS = '5748030' */
+) ac 
+inner join (select GHM, nvl(DMS,0) as DMS, ANNEE from PMSI.OVA_GHMINFO where DMS is not NULL) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '1070'
+group by CDURM
+order by CDURM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_19
+AS 
+select  CDURM, count(*) as nb_rum, count(distinct NORSS||CDURM) as nb_passages_distincts, count(distinct NORSS) as nb_rss, 
+sum(DUREESEJPART) as DMR, sum(DUREESEJPART_A) as DMR2, sum(DMSNAT_PRORAT) as DUREE_THEO, sum(DUREESEJPART) / sum(DMSNAT_PRORAT) as IP, 
+round(AVG(decode(DUREESEJPART, 0, 1, DUREESEJPART)),2) as DMS_RUM_BRUTE, 
+round(AVG(DUREESEJPART),2) as DMS_RUM, 
+round(AVG(decode(DUREESEJPART, 0, NULL, DUREESEJPART)),2) as DMS_RUM_NON0,
+round(AVG(decode(RSACMD, '28', NULL, DUREESEJPART)),2) as DMS_RUM_NON28 from (
+select ac.*, b.DMS as DMS_NAT, b.DMS * POIDS_RUM as DMSNAT_PRORAT from (
+select a.NORSS, a.RSACMD, a.DUREE, a.ANSEQTA, b.DUREESEJPART_TOT_A, b.DUREESEJPART as DUREESEJPART, a.ANSOR, a.MOISSOR, a.GHM, DUREE_A, b.CDURM,
+b.DUREESEJPART_A,  b.POIDS_RUM
+from PMSI.MCO_RSA_RSA a inner join
+PMSI.MCO_RUM_TEMPORIS b
+on a.NORSS = b.NORSS
+where a.ANSOR = 2019 and a.RSACMD not in ('28', '90') /*aand GHM not like '28Z%' and (a.TYPESEJ <> 'B' OR a.TYPESEJ is NULL) nd GHM not like '23Z02%'  --and a.NORSS = '5748030' */
+) ac 
+inner join (select GHM, nvl(DMS,0) as DMS, ANNEE from PMSI.OVA_GHMINFO where DMS is not NULL) b
+on ac.GHM = b.GHM  and ac.ANSEQTA = b.ANNEE)
+--where CDURM = '1070'
+group by CDURM
+order by CDURM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_20
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2020' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_19
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2019' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_18
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2018' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_17
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2017' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_16
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2016' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
+
+
+CREATE OR REPLACE VIEW MEMO_IP_IDEM_21_M02
+AS 
+select count(distinct NORSS) as nb_passages, ANSOR, UM, sum(DUREE) as J_REEL, sum(DMS_NAT) as J_THEO, 
+round(sum(DUREE) / sum(DMS_NAT), 3) as IP from 
+( 
+select distinct a.NORSS, /*CDURM,*/ a.ANSOR, DUREE, a.GHM, g.DMS as DMS_NAT, l.UM, l.SERVICE, l.POLE from 
+PMSI.MCO_RSA_RSA a 
+inner join PMSI.MCO_RUM_RUM b 
+on a.NORSS = b.NORSS and a.ANSOR = '2021' and a.MOISSOR < '03' and a.DUREE > 0 and substr(a.GHM, 6,6) <> 'J' and substr(GHM,1,2) not in ('28', '90') 
+left join PMSI.OVA_GHMINFO g on a.GHM = g.GHM and a.ANSEQTA = g.ANNEE 
+left join (select distinct iUM, UM, POLE, SERVICE from PMSI.MCO_BR_UMAS) l on b.CDURM = l.iUM 
+) where POLE like 'P35%' 
+group by ANSOR, UM;
 
 
